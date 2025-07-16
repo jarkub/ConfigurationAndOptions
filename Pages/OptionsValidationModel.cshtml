@@ -1,0 +1,26 @@
+﻿@page
+@model OptionsValidationModel
+@{
+    ViewData["Title"] = nameof(OptionsValidationModel);
+    Model.logger.LogInformation($"[{Model.Id}] {nameof(OptionsValidationModel)}.cshtml constructor called");
+
+}
+
+<h1 class="text-dark">@nameof(OptionsValidationModel)</h1>
+
+@if (Model.ShowRequestId)
+{
+    <p>
+        <strong>Request ID:</strong> <code>@Model.RequestId</code>
+    </p>
+}
+<p><strong>Model.Id</strong>: <code>@Model.Id</code></p>
+@* <p><strong>Model.RequestId</strong>: <code>@Model.RequestId</code></p> *@
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <p><strong>Model.Message</strong>: <code>@Html.Raw(@Model.Message)</code></p>
+}
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <p class="text-danger"><strong>Model.ErrorMessage</strong>: <code>@Html.Raw(@Model.ErrorMessage)</code></p>
+}

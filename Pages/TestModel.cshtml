@@ -1,0 +1,19 @@
+﻿@page
+@model TestModel
+@{
+    ViewData["Title"] = nameof(TestModel);
+    Model.logger.LogInformation($"[{Model.Id}] {nameof(TestModel)}.cshtml constructor called");
+
+}
+
+<h1 class="text-dark">@nameof(TestModel)</h1>
+
+@if (Model.ShowRequestId)
+{
+    <p>
+        <strong>Request ID:</strong> <code>@Model.RequestId</code>
+    </p>
+}
+<p><strong>Model.Id</strong>: <code>@Model.Id</code></p>
+@* <p><strong>Model.RequestId</strong>: <code>@Model.RequestId</code></p> *@
+<p><strong>Model.Message</strong>: <code>@Html.Raw(@Model.Message)</code></p>

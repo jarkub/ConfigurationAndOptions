@@ -1,0 +1,19 @@
+﻿@page
+@model IOptionsMonitorPatternModel
+@{
+    ViewData["Title"] = nameof(IOptionsMonitorPatternModel);
+    Model.logger.LogInformation($"[{Model.Id}] {nameof(IOptionsMonitorPatternModel)}.cshtml constructor called");
+
+}
+
+<h1 class="text-dark">@nameof(IOptionsMonitorPatternModel)</h1>
+
+@if (Model.ShowRequestId)
+{
+    <p>
+        <strong>Request ID:</strong> <code>@Model.RequestId</code>
+    </p>
+}
+<p><strong>Model.Id</strong>: <code>@Model.Id</code></p>
+@* <p><strong>Model.RequestId</strong>: <code>@Model.RequestId</code></p> *@
+<p><strong>Model.Message</strong>: <code>@Html.Raw(@Model.Message)</code></p>
