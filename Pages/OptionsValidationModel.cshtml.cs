@@ -36,7 +36,7 @@ public class OptionsValidationModel : PageModel
     private readonly IOptions<MyConfigOptions> config;
     public readonly Guid Id = Guid.NewGuid();
     public string? Message { get; private set; }
-    bool IsValid;
+    //bool IsValid;
     public string? ErrorMessage { get; private set; }
 
     [ActivatorUtilitiesConstructor]
